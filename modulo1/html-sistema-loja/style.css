@@ -1,0 +1,32 @@
+h1{
+    color: darkslategrey;
+    font-size: larger;
+}
+
+p{
+    color: mediumorchid;
+    font-style: italic;
+}
+
+div{
+    text-align: center;
+    background-color: pink;
+}
+
+
+ul{
+    color: darkmagenta;
+    font-size: large;
+    background-color: pink;
+    text-align: center;
+}
+h2{
+    font-style: normal;
+    text-align: center;
+
+}
+li{
+    color: darkmagenta;
+    font-size: large;
+    background-color: pink;
+}
