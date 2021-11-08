@@ -1,0 +1,45 @@
+body{
+    text-align: center;
+    color: black;
+    font-size: large;
+
+}
+#container-de-descricao{
+   background-color: darksalmon;
+   border: 1px solid black;
+   padding: 3px 90px;
+   
+   
+   
+
+   
+}
+h2{
+    background-color: darksalmon;
+    border: 1px solid rgb(255, 255, 255);
+    text-align: center;
+
+    
+}
+img{
+    width: 200px;
+    
+    
+    
+}  
+.botao{
+    text-align: left;
+    color: burlywood;
+    background-color: indianred;
+    border: 1px solid black;
+    
+}
+h4{
+    text-align: left;
+    border: 1px solid rgb(250, 250, 250);
+    
+}
+table{
+    text-align: justify;
+
+}
