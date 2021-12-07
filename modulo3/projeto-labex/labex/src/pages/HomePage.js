@@ -1,11 +1,22 @@
-import react from 'react'
+import React from 'react';
+import { useHistory } from 'react-router';
 
-function HomePage() {
-  return (
-    <div>
-      
-    </div>
-  );
+
+export const HomePage = () => { 
+ const history = useHistory()
+
+const goToListTripsPage = () => {
+  history.push("/trips/list")
+}
+const goToApplicationFormPage = () => {
+  history.push("/admin/trips/list")
 }
 
-export default HomePage;
+  return (
+    <div>
+    <p>Home Page</p>
+    <button onClick={goToListTripsPage}>Ver Viagens</button>
+    <button onClick={goToApplicationFormPage}>Área de Admin</button>
+    </div>
+  );
+  }
