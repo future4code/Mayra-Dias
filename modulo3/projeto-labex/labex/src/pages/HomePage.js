@@ -8,15 +8,15 @@ export const HomePage = () => {
 const goToListTripsPage = () => {
   history.push("/trips/list")
 }
-const goToApplicationFormPage = () => {
-  history.push("/admin/trips/list")
+const goToLoginPage = () => {
+  history.push("/login")
 }
 
   return (
     <div>
     <p>Home Page</p>
     <button onClick={goToListTripsPage}>Ver Viagens</button>
-    <button onClick={goToApplicationFormPage}>Área de Admin</button>
+    <button onClick={goToLoginPage}>Área de Admin</button>
     </div>
   );
   }

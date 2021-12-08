@@ -1,9 +1,11 @@
 import React from 'react';
 import { useHistory } from 'react-router';
+import useProtectedPage from '../hooks/useProtect';
 
 
 export const AdminHomePage = () => {
   const history = useHistory()
+  useProtectedPage()
 
 const goToCreateTripPage = () => {
   history.push("/admin/trips/create")
