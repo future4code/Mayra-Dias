@@ -1,28 +1,23 @@
 import React from 'react';
 import {useHistory} from "react-router-dom"
-import { useState } from "react";
 import axios from "axios"
+import useForm from '../hooks/useForm';
 
 
 export const LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { form, onChange, cleanFields } = useForm({ email: "", password: "" });
+ 
 
   const history = useHistory();
 
-  const onChangeEmail = (event) => {
-    setEmail(event.target.value);
-  };
 
-  const onChangePassword = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const onSubmitLogin = () => {
-    console.log(email, password);
-    const body = {
-      email: email,
-      password: password
+  const login = (event) => {
+    event.preventDefault();   
+    console.log(form);
+    cleanFields(); 
+ const body = {
+      email: form.email,
+      password: form.password
     };
 
     
@@ -38,22 +33,32 @@ export const LoginPage = () => {
   const goToHomePage = () => {
     history.push("/")
   }
+
+  
   return (
     <div>
       <h3>Login</h3>
-       <input
-        placeholder="email"
+      <from onSubmit={login}>
+       <input 
+        name="email"
+        value={form.email}
+        onChange={onChange}
+        placeholder={"E-mail"}
+        required
         type="email"
-        value={email}
-        onChange={onChangeEmail}
       />
       <input
-        placeholder="senha"
         type="password"
-        value={password}
-        onChange={onChangePassword}
+        name="password"
+        value={form.password}
+        onChange={onChange}
+        placeholder={"Senha"}
+        required
+        pattern={"^.{3,}"}
+        title={"Sua senha deve ter no mínimo 3 caracteres"}
       />
-      <button onClick={onSubmitLogin}>Entrar</button>
+      </from>
+      <button onClick={login}>Entrar</button>
     <button onClick={goToHomePage}>Voltar</button>
     </div>
   );

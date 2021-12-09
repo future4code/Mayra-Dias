@@ -14,7 +14,7 @@ const goToLoginPage = () => {
 
   return (
     <div>
-    <p>Home Page</p>
+    <p>LabeX</p>
     <button onClick={goToListTripsPage}>Ver Viagens</button>
     <button onClick={goToLoginPage}>Área de Admin</button>
     </div>
