@@ -5,8 +5,9 @@ display:flex;
 flex-direction:column;
 align-items: center;
 width: 100vw;
-`
+margin-top: 70px
 
+`
 export const InputContainer = styled.div`
 display:flex;
 flex-direction:column;
@@ -19,6 +20,14 @@ display:flex;
 flex-direction:column;
 width: 100vw;
 align-items: center;
-margin-bottom: 80px;
+
+`
+export const FormContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 100vw;
+align-items: center;
+margin-bottom: 20px;
+margin-top: 70px
 
 `

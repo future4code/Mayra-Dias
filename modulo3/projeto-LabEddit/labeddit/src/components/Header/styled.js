@@ -5,5 +5,4 @@ export const StyledContainer = styled(Toolbar)`
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-
 `

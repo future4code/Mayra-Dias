@@ -1,54 +1,65 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
-import {goToCadastro} from '../../routes/coordinator'
+import {goToCadastro, goToFeed} from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom'
 import {Container, InputContainer, ContainerBotao} from './styled'
 import useFormulario from '../../hooks/formulario';
+import { login } from '../../services/user';
+import useProtectPage from '../../hooks/useProtectPage';
 
 const LoginPage = () => {
-
 const [form, onChange, clear] = useFormulario({email:"", password: ""})  
+const history = useHistory()
+useProtectPage()
 
-  const onSubmitForm = () =>{
-
-  }
-    const history = useHistory()
-
+const onSubmitForm = (event) =>{
+event.preventDefault()
+login(form, clear, history)
+}
+   
     return(
       <div>
         <Container>
             <h1>Página de Login</h1>
         </Container>
-        <InputContainer>
         <form onSubmit={onSubmitForm}>
+        <InputContainer>
         <TextField
-         name={"email"}
-         value={form.email}
-         onChange={onChange}
-         label={"E-mail"}
-         fullWidth
+        name={"email"}
+        value={form.email}
+        onChange={onChange}
+        label={"E-mail"}
+        variant={"outlined"}
+        margin={"normal"}
+        required
+        type={"email"}
         />
         <TextField
          name={"password"}
          value={form.password}
          onChange={onChange}
          label={"Senha"}
-         fullWidth
+         variant={"outlined"}
+         margin={"normal"}
+         required
+         type={"password"}
         />
-        </form>
         </InputContainer>
         <ContainerBotao>
         <Button 
-        variant={"outlined" }
-        color="primary">Entrar
+        type={'submit'}
+        variant={"text"}
+        color={"secondary"}>Entrar
         </Button>
         <Button 
+        type={'submit'}
         onClick={() => goToCadastro(history)}
-        variant="outlined" 
-        color="primary">Cadastrar
+        variant={"outlined"}
+        color={"primary"}>Fazer Cadastro
         </Button>
-        </ContainerBotao>
+       </ContainerBotao>
+       </form>
       </div>
     )
 }
