@@ -6,7 +6,6 @@ import FeedPage from '../pages/FeedPage/FeedPage'
 import LoginPage from '../pages/LoginPage/LoginPage'
 import PostPage from '../pages/PostPage/PostPage'
 import Header from '../components/Header/Header'
-import HomePage from '../pages/Home/HomePage'
 
 const Router = () => {
 return(
@@ -14,9 +13,6 @@ return(
 <BrowserRouter>
 <Header/>
   <Switch>
-        <Route exact path="/home">
-            <HomePage/>
-        </Route>
        <Route exact path="/login">
             <LoginPage/>
         </Route>

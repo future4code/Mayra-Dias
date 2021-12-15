@@ -1,6 +1,3 @@
-export const goToHome = (history) => {
-    history.push("/home")
-}
 export const goToLogin = (history) =>{
     history.push("/login")
 }

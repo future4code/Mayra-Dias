@@ -9,7 +9,7 @@ const CadastroPage = () => {
             <h1>Cadastro</h1>
             <TextField
           id="standard-password-input"
-          label="Nome de usuário"
+          label="Nome do usuário"
           type="nome"
           autoComplete="current-password"
         />

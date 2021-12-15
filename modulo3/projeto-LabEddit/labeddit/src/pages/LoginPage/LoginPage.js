@@ -3,34 +3,53 @@ import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
 import {goToCadastro} from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom'
-
+import {Container, InputContainer, ContainerBotao} from './styled'
+import useFormulario from '../../hooks/formulario';
 
 const LoginPage = () => {
+
+const [form, onChange, clear] = useFormulario({email:"", password: ""})  
+
+  const onSubmitForm = () =>{
+
+  }
     const history = useHistory()
 
     return(
-        <div>
+      <div>
+        <Container>
             <h1>Página de Login</h1>
+        </Container>
+        <InputContainer>
+        <form onSubmit={onSubmitForm}>
         <TextField
-          id="standard-password-input"
-          label="E-mail"
-          type="E-mail"
-          autoComplete="current-password"
+         name={"email"}
+         value={form.email}
+         onChange={onChange}
+         label={"E-mail"}
+         fullWidth
         />
         <TextField
-          id="standard-password-input"
-          label="Senha"
-          type="password"
-          autoComplete="current-password"
+         name={"password"}
+         value={form.password}
+         onChange={onChange}
+         label={"Senha"}
+         fullWidth
         />
-        <Button variant="outlined" 
-          color="primary">Entrar
+        </form>
+        </InputContainer>
+        <ContainerBotao>
+        <Button 
+        variant={"outlined" }
+        color="primary">Entrar
         </Button>
-        <Button onClick={() => goToCadastro(history)}
-          variant="outlined" 
-          color="primary">Cadastrar
+        <Button 
+        onClick={() => goToCadastro(history)}
+        variant="outlined" 
+        color="primary">Cadastrar
         </Button>
-        </div>
+        </ContainerBotao>
+      </div>
     )
 }
 
