@@ -1,21 +1,21 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
 import TextField from '@material-ui/core/TextField';
-import {goToCadastro, goToFeed} from '../../routes/coordinator'
+import {goToCadastro} from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom'
 import {Container, InputContainer, ContainerBotao} from './styled'
 import useFormulario from '../../hooks/formulario';
 import { login } from '../../services/user';
 import useProtectPage from '../../hooks/useProtectPage';
 
-const LoginPage = () => {
+const LoginPage = ({setBotaoDaBarra}) => {
 const [form, onChange, clear] = useFormulario({email:"", password: ""})  
 const history = useHistory()
 useProtectPage()
 
 const onSubmitForm = (event) =>{
 event.preventDefault()
-login(form, clear, history)
+login(form, clear, history, setBotaoDaBarra)
 }
    
     return(

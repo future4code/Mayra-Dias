@@ -6,13 +6,13 @@ import {InputContainer, ContainerBotao, FormContainer} from '../LoginPage/styled
 import useFormulario from '../../hooks/formulario';
 import { fazerLogin } from '../../services/user';
 
-const Cadastro = () => {
-const [form, onChange, clear] = useFormulario({name:"", email:"", password: ""})  
+const Cadastro = ({setBotaoDaBarra}) => {
+const [form, onChange, clear] = useFormulario({username:"", email:"", password: ""})  
 const history = useHistory() 
 
   const onSubmitForm = (event) =>{
   event.preventDefault()
-  fazerLogin(form, clear, history)
+  fazerLogin(form, clear, history, setBotaoDaBarra)
   }
     
     return(
@@ -21,8 +21,8 @@ const history = useHistory()
             <h1>Página de Cadastro</h1>
         <InputContainer>
         <TextField
-         value={form.name}
-         name={'name'}
+         value={form.username}
+         name={'username'}
          onChange={onChange}
          label={'Nome'}
          variant={'outlined'}
@@ -54,13 +54,14 @@ const history = useHistory()
         <ContainerBotao>
         <Button 
         type={'submit'}
-        onClick={""}
         variant={"outlined"}        
-        color={"primary"}>Cadastrar
+        color={"primary"}>
+          Cadastrar
         </Button>
        </ContainerBotao>
-       </FormContainer>
-       </form>   
+      </FormContainer>
+   </form>  
+
     )
 }
 

@@ -1,9 +1,10 @@
+import { Typography } from '@material-ui/core';
 import React from 'react'
 
 const ErrorPage = () => {
     return(
         <div>
-            <h1>Erro</h1>
+            <Typography color={'primary'} align={'center'} variant={"h4"}>Erro 404 - Página não encontrada</Typography>
         </div>
     )
 }

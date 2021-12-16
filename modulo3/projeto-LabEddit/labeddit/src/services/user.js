@@ -2,26 +2,24 @@ import {BASE_URL} from '../constants/url'
 import axios from 'axios'
 import { goToFeed } from '../routes/coordinator'
 
-export const login = (body, clear, history) => {
+export const login = (body, clear, history, setBotaoDaBarra) => {
     axios.post(`${BASE_URL}/users/login`, body)
     .then((res) => {
       localStorage.setItem("token", res.data.token)
       clear()
       goToFeed(history)
-    })
-  .catch((err) => {
-    console.log(err)
+      setBotaoDaBarra("Logout")
   })
+  .catch((err) => alert(err.response.data.message))
   }
 
-export const fazerLogin = (body, clear, history) => {
+export const fazerLogin = (body, clear, history, setBotaoDaBarra) => {
     axios.post(`${BASE_URL}/users/signup`, body)
     .then((res) => {
       localStorage.setItem("token", res.data.token)
       clear()
       goToFeed(history)
+      setBotaoDaBarra("Logout")
     })
-  .catch((err) => {
-    console.log(err)
-  })
+  .catch((err) => alert(err.response.data.message))
   }
