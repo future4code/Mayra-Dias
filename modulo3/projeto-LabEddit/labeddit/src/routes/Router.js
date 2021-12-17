@@ -16,7 +16,7 @@ return(
         <Route exact path="/cadastro">
             <CadastroPage setBotaoDaBarra={setBotaoDaBarra}/>
         </Route>
-        <Route exact path="/pagina-feed/:id">
+        <Route exact path="/pagina-feed">
             <FeedPage/>
         </Route>
         <Route exact path="/pagina-post">
