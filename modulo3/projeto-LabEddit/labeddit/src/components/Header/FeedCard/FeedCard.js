@@ -4,6 +4,7 @@ import { CardActionArea, Typography } from '@material-ui/core';
 import { RecipeCardContainer } from './styled';
 
 
+
 const FeedCard = (props) =>{
     return(
         <RecipeCardContainer onClick={props.onClick}>
