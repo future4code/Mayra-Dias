@@ -1,0 +1,14 @@
+//1 
+ a) GET.
+ b) A entidade é users.
+
+//2
+ a)
+ b)Não.
+
+//3
+ a)Query
+
+//4
+ a)Não mudou nada, deu erro.
+ b)Não.
