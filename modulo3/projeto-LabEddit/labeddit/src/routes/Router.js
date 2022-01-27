@@ -10,16 +10,16 @@ const Router = ({setBotaoDaBarra}) => {
 return(
  
   <Switch>
-       <Route exact path="/login">
+       <Route exact path={"/login"}>
             <LoginPage setBotaoDaBarra={setBotaoDaBarra}/>
         </Route>
-        <Route exact path="/cadastro">
+        <Route exact path={"/cadastro"}>
             <CadastroPage setBotaoDaBarra={setBotaoDaBarra}/>
         </Route>
-        <Route exact path="/pagina-feed">
+        <Route exact path={"/feed"}>
             <FeedPage/>
         </Route>
-        <Route exact path="/pagina-post">
+        <Route exact path={"/pagina/:postId"}>
             <PostPage/>
         </Route>
         <Route>
