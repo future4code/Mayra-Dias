@@ -1,0 +1,8 @@
+### Exercício 1
+a) Chave estrangeira é a referência a registros vindo de outras tabelas.
+b) INSERT INTO Rating (id, comment, rate, movie_id) 
+VALUES ("001", "O filme é uma obra de arte.", 7, "004");
+
+### Exercício 2
+a) criação do id do filme e do ator.
+
