@@ -1,0 +1,20 @@
+### Exercício 1
+ a) VARCHAR é para guardar strings. 
+Date para armazenar dados referentes a data. 
+
+### Exercício 2
+ a) INSERT INTO Actor (id, name, salary, birth_date, gender)
+VALUES("002", "Glória Pires",1.200.000, "1963-08-23");
+ b) Porque já tem esse id.
+ 
+### Exercício 4
+ a)Query com nomes começam com "A" ou "J", e o valor maior que o salário.
+ b)SELECT * FROM Actor
+WHERE name NOT LIKE "A%" AND salary > 350000;
+ c)SELECT * FROM Actor
+WHERE name LIKE "%g%" OR name LIKE "%G%";
+ d)SELECT * FROM Actor
+WHERE (name LIKE "%g%" OR name LIKE "%G%" OR name LIKE "%a%" OR name LIKE "%A%")
+AND salary BETWEEN 350000 AND 900000;
+
+ 
