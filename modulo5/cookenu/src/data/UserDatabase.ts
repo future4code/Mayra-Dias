@@ -8,13 +8,13 @@ export class UserDatabase extends BaseDatabase{
            id: user.getId(),
            name: user.getName(),
            email: user.getEmail(),
-           password: user.getPassword()
+           password: user.getPassword(),
+           role: user.getRole()
        })
      }catch(error){
        throw new Error(error.sqlMessage || error.message)
      }
  }
-
 
     public async findUser(email:string):Promise<User>{
         try{
@@ -22,7 +22,7 @@ export class UserDatabase extends BaseDatabase{
             .select('*')
             .where({email});
 
-        return User.toUseMode(user[0]);
+        return user[0] && User.toUseMode(user[0]);
             }catch(error){
             throw new Error(error.sqlMessage || error.message)
 
