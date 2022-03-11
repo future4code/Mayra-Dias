@@ -5,12 +5,13 @@ import UserData from "./data/userData";
 
 const userController = new UserController(
    new UserBusiness(
-      new UserData()
+      new UserData(),
+   
    )
 )
 
 app.post('/users/signup', userController.signup)
-app.post('/users/login')
-app.post('/posts/create')
-app.get('/posts/:id')
+app.post('/users/login', userController.login)
+app.post('/posts/create', userController.create)
+app.get('/posts/:id', userController.postId)
    
