@@ -1,9 +1,10 @@
 import React from 'react'
+import Tela from './pages/Tela'
 
-const App  = () => {
+function App (){
   return (
     <div>
-      MEGA-SENA 
+      <Tela/> 
     </div>
   );
 }
