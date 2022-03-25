@@ -1,11 +1,12 @@
-import React from 'react'
-import Tela from './pages/Tela'
+import React from "react";
+import GlobalState from "./global/GlobalState";
+import Router from "./routes/Router";
 
-function App (){
+function App() {
   return (
-    <div>
-      <Tela/> 
-    </div>
+    <GlobalState>
+      <Router />
+    </GlobalState>
   );
 }
 
