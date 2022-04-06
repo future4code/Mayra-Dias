@@ -1,11 +1,13 @@
 import React from 'react'
+import {ErrorContainer, ErrorImg} from './style'
+import img from '../../assets/img.jpg'
 
 
 const ErrorPage = () => {
     return (
-        <div>
-            <h1>Error Page</h1>
-        </div>
+        <ErrorContainer>
+      <ErrorImg src={img}/>      
+        </ErrorContainer>
     )
 }
 

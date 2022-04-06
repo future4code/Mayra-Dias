@@ -5,23 +5,21 @@ import DetailsPage from '../pages/DetailPage/DetailPage'
 import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import Header from '../components/Header/Header'
 
-
 const Router = () => {
     return(
     <BrowserRouter>
-    <Header>
+    <Header/>
         <Switch>
           <Route exact path="/">
              <HomePage/>
           </Route>
-          <Route exact path="/details">
+          <Route exact path="/details/:id">
              <DetailsPage/>
           </Route>
           <Route>
              <ErrorPage exact path="/error"/>
           </Route>
         </Switch>
-      </Header>
     </BrowserRouter>
     )
 }
